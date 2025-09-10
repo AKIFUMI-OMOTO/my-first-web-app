@@ -1,0 +1,122 @@
+/* ブラウザで設定されているスタイルのリセット・共通設定 */
+/* 消さないでください */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+form,
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+/* スタイルのリセット終了 */
+
+/* サイドバーとメインコンテンツを包むための要素のスタイル */
+.Dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* サイドバーに関連するスタイル */
+#Side-bar {
+  width: 256px;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#Side-bar header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#Side-bar header a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4f7cac;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* メインコンテンツに関連するスタイル */
+main {
+  flex: 1; /* flex-grow: 1;とflex-shrink: 1;の省略形 */
+  padding: 40px;
+  overflow-y: auto;
+}
+
+main section#home {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+main section#home header {
+  background-color: #ffffff;
+  padding: 32px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+main section#home header div {
+  width: 96px;
+  height: 96px;
+  background-color: #4f7cac;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+}
+
+main section#home header span {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+main section#home header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2f2f2f;
+  margin-bottom: 8px;
+}
+
+main section#home header h2 {
+  font-size: 1.125rem;
+  color: #757575;
+  margin-bottom: 24px;
+}
+
+main section#home div {
+  max-width: 672px;
+  margin: 0 auto;
+  padding: 32px;
+  color: #757575;
+}
+
+main section#home p {
+  line-height: 1.6;
+  color: #424242;
+  margin-bottom: 16px;
+}
