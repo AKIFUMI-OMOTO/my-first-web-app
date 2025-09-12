@@ -1,5 +1,5 @@
-/* ブラウザで設定されているスタイルのリセット・共通設定 */
-/* 消さないでください */
+/* ブラウザで設定されているスタイルのリセット・共通設定 /
+/ 消さないでください */
 *,
 *::before,
 *::after {
@@ -27,29 +27,27 @@ ul {
 }
 /* スタイルのリセット終了 */
 
-/* サイドバーとメインコンテンツを包むための要素のスタイル */
-.Dashboard-container {
+/* サイドバーとメインコンテンツを包むための要素 */
+.dashboard-container {
   display: flex;
   height: 100vh;
 }
 
-/* サイドバーに関連するスタイル */
-#Side-bar {
+/* サイドバー */
+.sidebar {
   width: 256px;
-  flex-shrink: 0;
   background-color: #f5f5f5;
   border-right: 1px solid #e0e0e0;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex-shrink: 0;
 }
-
-#Side-bar header {
+.sidebar-header {
   padding: 20px;
   border-bottom: 1px solid #e0e0e0;
 }
-
-#Side-bar header a {
+.sidebar-home {
   font-size: 1.25rem;
   font-weight: 600;
   color: #4f7cac;
@@ -58,28 +56,67 @@ ul {
   gap: 8px;
   text-decoration: none;
 }
-
-/* メインコンテンツに関連するスタイル */
-main {
-  flex: 1; /* flex-grow: 1;とflex-shrink: 1;の省略形 */
-  padding: 40px;
-  overflow-y: auto;
+.sidebar-menu {
+  padding: 20px;
 }
-
-main section#home {
+.sidebar-menu-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #757575;
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.sidebar-menu-item:hover {
+  background-color: #e0e0e0;
+}
+.sidebar-menu-item.active {
+  background-color: #4f7cac;
+  color: #ffffff;
+}
+.sidebar-menu-item.active .ri-scales-3-line {
+  color: #ffffff;
 }
 
-main section#home header {
+/* メインコンテンツ */
+.main-content {
+  flex: 1;
+}
+
+/* セクションヘッダー */
+.section-header {
   background-color: #ffffff;
   padding: 32px;
   border-bottom: 1px solid #e0e0e0;
   text-align: center;
 }
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2f2f2f;
+  margin-bottom: 8px;
+}
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #757575;
+  margin-bottom: 24px;
+}
+.section-description {
+  max-width: 672px;
+  margin: 0 auto;
+  color: #757575;
+  padding: 32px;
+}
+.section-description p {
+  margin-bottom: 16px;
+}
 
-main section#home header div {
+/* プロフィールサークル */
+.profile-circle {
   width: 96px;
   height: 96px;
   background-color: #4f7cac;
@@ -87,36 +124,128 @@ main section#home header div {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 24px;
 }
-
-main section#home header span {
+.profile-circle span {
   font-size: 2.5rem;
   color: #ffffff;
 }
 
-main section#home header h1 {
-  font-size: 1.5rem;
+/* セクション本文 */
+.section-body {
+  padding: 32px;
+}
+
+/* 単位変換セクションのスタイル */
+.converter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.converter-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.select-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-group label {
   font-weight: 600;
+  color: #555;
+}
+
+.converter-from,
+.converter-to {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.converter-result-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.converter-result {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4f7cac;
+  min-height: 24px;
+}
+
+.error-message {
+  color: #e53935;
+  font-weight: 600;
+}
+
+/* 隠し要素 */
+.hidden {
+  display: none;
+}
+
+/* コンバーターカード */
+.converter-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  max-width: 448px;
+  margin: 0 auto;
+}
+
+/* フォーム関連 */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: #2f2f2f;
   margin-bottom: 8px;
 }
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #4f7cac;
+  box-shadow: 0 0 0 4px #d9e7f3;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
 
-main section#home header h2 {
+/* コンバーター結果 */
+.converter-result-container {
+  text-align: center;
+  padding: 16px;
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+.converter-result {
   font-size: 1.125rem;
-  color: #757575;
-  margin-bottom: 24px;
-}
-
-main section#home div {
-  max-width: 672px;
-  margin: 0 auto;
-  padding: 32px;
-  color: #757575;
-}
-
-main section#home p {
-  line-height: 1.6;
-  color: #424242;
-  margin-bottom: 16px;
+  font-weight: 500;
+  color: #4f7cac;
 }
